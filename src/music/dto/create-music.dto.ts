@@ -1,6 +1,7 @@
 export class CreateMusicDto {
   readonly title: String;
   readonly author: String;
+  readonly filename: String;
   readonly rating: String;
   readonly letter: String;
   readonly category: String;

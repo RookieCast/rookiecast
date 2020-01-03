@@ -2,7 +2,7 @@ import { Model} from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 
-import { Music } from './interface/music.interface'
+import { Music } from './interface/music.interface';
 import { CreateMusicDto } from './dto/create-music.dto';
 
 @Injectable()
@@ -21,9 +21,9 @@ export class MusicService {
     return music;
   }
   // Add Music
-  async addMusic (createMusicDto: CreateMusicDto): Promise<Music> {
-    const newMusic = await this.musicModel(createMusicDto)
-    return newMusic;
+  async addMusic (createMusicDto: CreateMusicDto, file): Promise<Music> {
+    const newMusic = await this.musicModel(createMusicDto);
+    return newMusic.save();
   }
 
   // Edit music details
